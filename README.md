@@ -1,4 +1,4 @@
-1.该springcloud项目 包括以下内容：
+该springcloud项目 包括以下内容：
 
 1）eureka 服务注册与发现
 
