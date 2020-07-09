@@ -1,0 +1,26 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: zuul-9527.com
+    prefer-ip-address: true
+info:
+  app.name: yangqx-springcloud
+  company.name: tflx.com
+
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept
+    mydept.path: /mydept/**
+#      ignored-services: springcloud-provider-dept   #不再使用这个路径访问了
+  ignored-services: "*"   #不再使用这个路径访问了  隐藏全部的
+  prefix: /tflx  #设置公共的前缀
+

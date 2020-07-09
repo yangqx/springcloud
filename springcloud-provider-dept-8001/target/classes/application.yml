@@ -1,0 +1,28 @@
+server:
+  port: 8001
+mybatis:
+  type-aliases-package: com.tflx.springcloud.pojo
+  config-location: classpath:mybatis\mybatis-config.xml
+  mapper-locations: classpath:mybatis\mapper\*.xml
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #数据源
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db01?useUnicodde=true&characterEncoding=utf-8
+    username: root
+    password: x5
+# eureka
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: springclould-provider-dept8001
+    prefer-ip-address: true #显示ip
+# info
+info:
+  app.name: yangqx-springcloud
+  company.name: tflx.com

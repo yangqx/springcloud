@@ -1,0 +1,9 @@
+# bootstrap  是系统级别的文件   优先级更高
+spring:
+  cloud:
+    config:
+      uri: http://www.tflx.com:3344
+      name: config-client  #需要从git上获取的 文件  不带后缀
+      profile: dev
+      label: master
+
